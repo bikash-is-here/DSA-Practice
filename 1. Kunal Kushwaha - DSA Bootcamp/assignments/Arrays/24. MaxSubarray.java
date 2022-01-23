@@ -9,10 +9,10 @@ public class _53_MaxSubarray {
     static int maxSubArray(int[] nums) {
         int N = nums.length;
         int max_sum = Integer.MIN_VALUE;
-        int sum = nums[0];
+        int sum = 0;
 
-        for (int i = 1; i < N; i++) {
-            sum = Math.max(nums[i] + sum, nums[i]);
+        for (int i = 0; i < N; i++) {
+            sum = Math.max(nums[i], sum+ nums[i]);
             max_sum = Math.max(sum, max_sum);
         }
 
